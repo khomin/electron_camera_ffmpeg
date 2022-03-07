@@ -1,0 +1,116 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+body {
+  color: black;
+  height: 100vh;
+  background-color: black;
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.Hello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.text_caption {
+  color: white;
+  align-items: center;
+  display: flex;
+  margin-left: 8px;
+}
+
+.status {
+  display: flex;
+  align-self: center;
+  margin-left: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.topPanel {
+  height: 40px;
+  width: auto;
+  color: #233F67;
+  display: flex;
+  background-color: #233F67;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  justify-content: left;
+}
+
+.button {
+  height: 40px;
+  width: auto;
+  display: flex;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.videoFrame {
+  display: flex;
+  position: fixed;
+  top: 90px;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.stats {
+  height: 50px;
+  width: auto;
+  display: flex;
+  align-self: center;
+  background-color: #252525;
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+}
