@@ -1,6 +1,11 @@
 # electron_camera_ffmpeg
 An example of using Electron and a native ffmpeg addon to access a webcamera
 
+The c++ addon itself is included as a submodule and will be cloned automatically (https://github.com/khomin/electron_ffmpeg_addon_camera)
+
+But it has to be built independently
+
+
 Visual Example
 ![demo](https://github.com/khomin/electron_camera_ffmpeg/blob/master/demo.png)
 
