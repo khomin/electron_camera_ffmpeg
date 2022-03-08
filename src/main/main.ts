@@ -17,7 +17,7 @@ import { resolveHtmlPath } from './util';
 
 import addon from '../native/build/Release/hello';
 
-addon.setStatusCb(function(data) {
+addon.setCb(function(data) {
     if(data.type == 'stats') {
       // var log = `test: js stats, is_active=${ data.is_active }, packet_cnt=${ data.packet_cnt }, err_cnt=${ data.err_cnt }`;
       // console.log(log);
