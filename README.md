@@ -378,12 +378,43 @@ NODE_API_MODULE(<addon name>, <init>):<br/>
 ```
 NODE_API_MODULE(addon, Init)
 ```
-If you have any question you can contact me over email<br/>
-khominvladimir@yandex.ru<br/>
-
 The c++ addon itself is included as a submodule and will be cloned automatically<br/>
 (https://github.com/khomin/electron_ffmpeg_addon_camera)<br/>
 But it has to be built independently<br/>
+  
+Keep in mind
+The build ffmpeg is not in the repository (because of its relatively large size)
+You must build ffmpeg as a shared library
+And then edit the path in binding.gyp (src/native/binding.gyp)
+```
+'libraries': [
+  '../src/ffmpeg_mac/lib/libavcodec.58.91.100.dylib',
+  '../src/ffmpeg_mac/lib/libavdevice.58.10.100.dylib',
+  '../src/ffmpeg_mac/lib/libavfilter.7.85.100.dylib',
+  '../src/ffmpeg_mac/lib/libavformat.58.45.100.dylib',
+  '../src/ffmpeg_mac/lib/libavutil.56.51.100.dylib',
+  '../src/ffmpeg_mac/lib/libpostproc.55.7.100.dylib',
+  '../src/ffmpeg_mac/lib/libswresample.3.7.100.dylib',
+  '../src/ffmpeg_mac/lib/libswscale.5.7.100.dylib',
+],
+```
+The project is written on macos
+If you need Windows/Linux support, you must specify the appropriate methods for avformat_open_input
+You can see the exact location by this code
+```
+const char* VideoSource::getDeviceFamily() {
+#ifdef _WIN32
+  const char *device_family = "dshow";
+#elif __APPLE__
+  const char *device_family = "avfoundation";
+#elif __linux__
+  const char *device_family = "v4l2";
+#endif
+  return device_family;
+}
+```
+If you have any question you can contact me over email<br/>
+khominvladimir@yandex.ru<br/>
 
 Install
 Clone the repo and install dependencies:
